@@ -19,11 +19,15 @@ namespace Full_GRASP_And_SOLID
 
         public bool Cooked {get; set;} = false;
 
+        private CountdownTimer timer;
+
+        private TimerCli timerClient;
+
         public void Cook()
         {
-            int cookTime = GetCookTime();
-            CountdownTimer timer = new CountdownTimer();
-            timer.Register(cookTime, TimerClientt(this));
+            this.timer = new CountdownTimer();
+            this.timerClient = new TimerCli(this);
+            timer.Register(this.GetCookTime(),this.timerClient);
             Cooked = true;
         }
 

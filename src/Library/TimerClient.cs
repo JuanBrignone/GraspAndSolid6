@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace Full_GRASP_And_SOLID
 {
-    public class TimerClientt
+    public class TimerCli : TimerClient
     {
-        private readonly Recipe recipe;
+        private Recipe recipe;
 
-        public TimerClientt(Recipe recipe)
+        public TimerCli(Recipe recipe)
         {
             this.recipe = recipe;
         }
